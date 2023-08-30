@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl2c1fmfd8kxa"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy.gd" id="1_4e6mo"]
+[ext_resource type="Texture2D" uid="uid://cvqwlvbdghx8c" path="res://Assets/heavy_metaru.png" id="2_df4o0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gnma1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpskt"]
+
+[node name="Enemy" type="CharacterBody2D"]
+position = Vector2(85, 268)
+script = ExtResource("1_4e6mo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_df4o0")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(20, 20)
+shape = SubResource("CircleShape2D_gnma1")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+scale = Vector2(3, 3)
+shape = SubResource("RectangleShape2D_dpskt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

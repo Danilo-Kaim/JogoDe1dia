@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1ys1ygyocux"]
+
+[ext_resource type="Script" path="res://Scripts/game_over.gd" id="1_gh4xx"]
+[ext_resource type="Texture2D" uid="uid://beotfyg521x21" path="res://Assets/ae3.jpg" id="1_x5tm0"]
+
+[node name="Game_Over" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gh4xx")
+
+[node name="Ae3" type="Sprite2D" parent="."]
+position = Vector2(648, 324)
+scale = Vector2(0.722093, 0.742188)
+texture = ExtResource("1_x5tm0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.316
+anchor_right = 0.5
+anchor_bottom = 0.316
+offset_left = -147.0
+offset_top = -65.768
+offset_right = 147.0
+offset_bottom = 201.232
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "GAME OVER"
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+anchor_left = 0.505
+anchor_top = 0.5
+anchor_right = 0.505
+anchor_bottom = 0.5
+offset_left = -78.76
+offset_top = 2.0
+offset_right = 79.24
+offset_bottom = 79.0
+text = "Voltar para o menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

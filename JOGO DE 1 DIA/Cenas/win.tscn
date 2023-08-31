@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx2vrbdttp0re"]
+
+[ext_resource type="Texture2D" uid="uid://ba5fqkfhklid" path="res://Assets/telafinal.png" id="2_m8os7"]
+
+[sub_resource type="GDScript" id="GDScript_ehtpa"]
+script/source = "extends Control
+
+
+func _on_voltar_pressed():
+	get_tree().change_scene_to_file(\"res://Cenas/inicial.tscn\")
+"
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = SubResource("GDScript_ehtpa")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Ae3" type="Sprite2D" parent="HBoxContainer"]
+position = Vector2(558, 338)
+scale = Vector2(0.738336, 0.642214)
+texture = ExtResource("2_m8os7")
+
+[node name="voltar" type="Button" parent="."]
+layout_mode = 2
+offset_left = 484.0
+offset_top = 554.0
+offset_right = 642.0
+offset_bottom = 594.0
+text = "Voltar para o menu"
+
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

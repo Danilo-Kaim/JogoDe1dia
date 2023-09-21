@@ -14,3 +14,7 @@ config/name="JOGO DE 1 DIA"
 run/main_scene="res://Cenas/inicial.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

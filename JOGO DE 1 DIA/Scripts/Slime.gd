@@ -9,12 +9,14 @@ func _process(_delta):
 	match estados:
 		'parado':
 			velocity = Vector2.ZERO
+			$AnimatedSprite2D.play("Parado")
 			if player:
 				estados = 'seguindo'
 			pass
 		'seguindo':
 			if player:
 				velocity = position.direction_to(player.global_position) * speed
+				$AnimatedSprite2D.play("Andar")
 			else: 
 				estados = 'parado'
 	move_and_slide()

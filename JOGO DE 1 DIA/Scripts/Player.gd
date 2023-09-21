@@ -2,9 +2,8 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-var _animated_sprite = AnimatedSprite2D
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var directionX = Input.get_axis("ui_left", "ui_right")
 	var directionY = Input.get_axis("ui_up", "ui_down")
 
@@ -22,5 +21,5 @@ func _physics_process(delta):
 		velocity.y = move_toward(velocity.x, 0, SPEED)
 		$AnimatedSprite2D.play("Parado")
 
-
+	
 	move_and_slide()
